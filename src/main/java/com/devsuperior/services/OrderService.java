@@ -9,9 +9,9 @@ import com.devsuperior.entities.Order;
 public class OrderService {
 
 @Autowired
-private DiscountService discountService;
+private DiscountService discountService = new DiscountService();
 
     public double total(Order order){
-        return order.getBasic() - discountService.dsct(order);
+        return order.getBasic() - discountService.dsct(order.getDiscount(), order.getBasic());
     }
 }

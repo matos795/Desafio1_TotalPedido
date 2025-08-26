@@ -1,11 +1,12 @@
 package com.devsuperior.services;
 
-import com.devsuperior.entities.Order;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DiscountService {
 
-public double dsct(Order order) {
-return (order.getDiscount() / 100) * order.getBasic();
+public double dsct(double discount, double amount) {
+return (discount / 100) * amount;
 }
 
 }
