@@ -10,8 +10,10 @@ public class OrderService {
 
 @Autowired
 private DiscountService discountService = new DiscountService();
+@Autowired
+private ShippingService shippingService = new ShippingService();
 
     public double total(Order order){
-        return order.getBasic() - discountService.dsct(order.getDiscount(), order.getBasic());
+        return discountService.dsct(order) + shippingService.shipment(order);
     }
 }

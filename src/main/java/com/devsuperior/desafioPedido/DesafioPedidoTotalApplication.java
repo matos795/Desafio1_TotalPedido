@@ -26,7 +26,8 @@ public class DesafioPedidoTotalApplication {
 		Order order = new Order(code, basic, discount);
 		OrderService orderService = new OrderService();
 
-		System.out.println("Total: " + orderService.total(order));
+		System.out.println("Pedido código " + order.getCode());
+		System.out.printf("Valor total: R$ %.2f%n", orderService.total(order));
 
 		scan.close();
 
